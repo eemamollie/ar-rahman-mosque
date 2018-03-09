@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="us-en">
+	<head>
+		<title>Jquery (Effect)</title>
+		<link type="text/css" href="" rel="StyleSheet">
+		
+	</head>
+	<body>
+		<div id="FadeMe">
+			<h1>Jquery()</h1>
+			<p>Porta odio ipsum interdum sed congue, massa nunc mauris. Neque at in dis malesuada. Ipsum tenetur integer</p>
+			<p>Nunc convallis ac exercitation erat, quis mauris congue libero rutrum magna gravida. Libero sed curabitur</p>
+		</div>
+			<input type="button" id="btnfadein" value="FadeIn">
+			<input type="button" id="btnfadeout" value="FadeOut">
+			<input type="button" id="btnToggle" value="Toggle">
+		
+	</body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<script type="text/JavaScript">	
+		$(function(){
+			$("#btnfadein").click(function(){
+				$("#FadeMe").fadeIn();
+			});
+			$("#btnfadeout").click(function(){
+				$("#FadeMe").fadeOut();
+			});
+			$("#btnToggle").click(function(){
+				$("#FadeMe").fadeToggle();
+			});
+		});
+	</script>
+</html>
+
+

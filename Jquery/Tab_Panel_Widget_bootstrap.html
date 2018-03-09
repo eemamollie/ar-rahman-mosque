@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="us-en">
+<head>
+	<title>tab_panel_widget</title>
+	<style type="text/css">
+		.tab-panels{background:#fff;color:#000;display:block;margin-top:10px;}
+		.tab-panels ul{margin: 0;padding: 0;} 
+		.tab-panels ul li{list-style-type: none;display: inline-block;cursor: pointer;}
+		.tab-panels .panel{display: none;}
+		.tab-panels .panel.active{display: block;}
+	</style>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">	
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<div class="tab-panels container">
+		
+		<ul class="tabs">
+			<li rel="panel1" class="active"><button type="button" class="btn btn-info" id="btnList">List View</button></li>
+	  		<li rel="panel2"><button type="button" class="btn btn-info" id="btnTable">Table View</button></li>
+		</ul><br/>
+		<div id="panel1" class="panel active row">		  	
+		    <div class="col col-12" id="list">
+		      	<div>	    		
+		    		<div class="list-group" id="listView">
+		    			<h4>JSON Data list Display</h4>
+		    			<div class="list-group">
+						  <a href="#" class="list-group-item list-group-item-action">Manipulating data here</a>
+						  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+						  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+						  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+						  <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a>
+						</div>
+		    		</div> 		
+		      	</div>
+		    </div>
+		</div>
+		<div id="panel2" class="panel row">
+			<div class="col col-12" id="table">
+		    	<div class="table-responsive">
+					<h4>JSON DATA Table Display</h4>
+					<table class="table table-bordered table-striped" id="employee_table">
+						<thead>
+						    <tr>
+						      <th scope="col">Post Id</th>
+						      <th scope="col">User Id</th>
+						      <th scope="col">Name</th>
+						      <th scope="col">Email</th>
+						      <th scope="col">Body</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>Mark</td>
+						      <td>Otto</td>
+						      <td>@mdo</td>
+						      <td>Lary</td>
+						    </tr>
+						    <tr>
+						      <th scope="row">2</th>
+						      <td>Jacob</td>
+						      <td>Thornton</td>
+						      <td>@fat</td>
+						      <td>The</td>
+						    </tr>
+						    <tr>
+						      <th scope="row">3</th>
+						      <td>Larry</td>
+						      <td>the Bird</td>
+						      <td>@twitter</td>
+						      <td>bird</td>
+						    </tr>
+						  </tbody>
+					</table>
+				</div>
+		    </div>
+		</div>
+		
+	</div>
+</body>
+	
+	<script type="text/javascript">
+		$(function(){
+			
+			$('.tab-panels .tabs li').on('click', function(){
+				var $panel = $(this).closest('.tab-panels');
+
+				$panel.find('.tabs li.active').removeClass('active');
+				$(this).addClass('active');
+
+				//figure out which panel to show
+				var $panelToShow = $(this).attr('rel');
+
+				//hide current panel
+				$panel.find('.panel.active').slideUp(250, showNextPanel);
+
+				//show next panel
+				function showNextPanel(){
+					$(this).removeClass('active');
+					$('#'+$panelToShow).slideDown(250, function(){
+						$(this).addClass('active');
+					});
+				}
+			});
+		});
+
+
+			// //for list view
+			// $.getJSON("ajax_json.json", function(data){
+			// 	var employee_data = "";
+			// 	$.each(data, function(key, value){
+			// 		employee_data += '<tr>';
+			// 		employee_data += '<td>'+ value.postId +'</td>';
+			// 		employee_data += '<td>'+ value.id +'</td>';
+			// 		employee_data += '<td>'+ value.name +'</td>';
+			// 		employee_data += '<td>'+ value.email +'</td>';
+			// 		employee_data += '<td>'+ value.body +'</td>';
+			// 		employee_data += '</tr>';				
+			// 	});
+				
+			// 	$("#employee_table").append(employee_data);			
+			// });
+
+
+			//for Table view
+			// $.ajax({
+			// 	url: 'ajax_json.json',
+			// 	dataType: 'json',
+			// 	type: 'get',
+			// 	cache: true,
+			// 	success: function(data){
+			// 		$.each(data, function(index, value){
+			// 			//console.log(value.id);
+
+			// 			document.getElementById("listView").innerHTML +=
+						
+			// 			"<a href='#' class='list-group-item list-group-item-action flex-column align-items-start'>"+
+			// 			    //"<div class='justify-content-between'>"+ 
+			// 			    "<p><h5 class='mb-1'> Post Id: "+ value.postId+ "</h5></p>"+
+			// 			    "<h5 class='mb-1'> Id: "+ value.id+ "</h5></p>"+
+			// 			    "<h5 class='mb-1'> Name: "+ value.name+ "</h5></p>"+
+			// 			    "<h5 class='mb-1'> Email: "+ value.email+ "</h5></p>"+
+			// 			    "<h5 class='mb-1'> Body: "+ value.body+"</h5></p>"+
+			// 		    "</a>";
+			// 		});
+			// 	}
+			// });
+	</script>
+</html>

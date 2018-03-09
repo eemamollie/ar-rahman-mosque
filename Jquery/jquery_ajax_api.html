@@ -1,0 +1,74 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery and Ajax API</title>
+	<style type="text/css">
+		button{margin-left: 45px;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="header">
+			<h1>jQuery Ajax and API</h1><br><hr>
+			<h3>Coffee Orders</h3> 
+		</div>
+		<div class="container">
+			<ul id="orders"></ul>
+			<h4>Add a Coffee Order</h4>
+			<p>Name : <input type="text" id="name"></p>
+			<p>Drink: <input type="text" id="drink"></p>
+			<button id="add-order">Add</button>
+		</div>
+	</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+		var $orders = $('#orders');
+
+		$.ajax({
+			type: 'GET',
+			url : '/api/orders',
+			success: function(orders){
+				$.each(orders, function(i, order){
+					$orders.append('<li>OLLIE EEMAM</li>');
+				});
+			}
+		});
+	});
+</script>
+</html>
+
+
+
+ -->
+
+
+<!DOCTYPE html>
+<html lang="us-en">
+<head>
+	<title>ajax</title>
+</head>
+<body>
+	<ul id="orders"></ul>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(function(){
+		var $orders = $('#orders');
+		$.ajax({
+			type: 'GET',
+			url: '/api/orders',
+			success: function(data){
+				$.each(data, function(i, order){
+					$orders.append('<li>Ollie Eemam</li>');
+				});
+			}
+		});
+	});
+</script>
+
+</html>
+

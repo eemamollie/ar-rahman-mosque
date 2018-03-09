@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Examples of jQuery</title>	
+	<style type="text/css">
+		#hideMe
+		{
+			width:300px;
+			height:100px;			
+			left:0;
+			right:0;
+			position:relative;
+			border:1px solid #000;
+			background:teal;
+		}
+		#hideMe p{text-align:center; color:yellow; font-size:18px; font-weight:bold;padding-top:20px;}
+	</style>
+</head>
+	<body>
+		<div id="timer" style="width:200px; height:40px; border:1px solid orange;"></div>
+		<div id="hideMe"><p>Please keep any eye on me!</p></div>		
+	</body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/JavaScript">		
+		$(document).ready(function(){			
+				setInterval(ajaxcall, 500);			
+		});
+		function ajaxcall(){
+			var dt=new Date();
+			var time=dt.getHours()+":"+dt.getMinutes()+":"+dt.getSeconds();
+			$('#timer').html(time);
+		}
+		
+		$(function(){
+			/*$('#hideMe').click(function(){
+				$(this).hide('slow');
+			});
+			
+			$('#hideMe').click(function(){
+				$('*').hide(2000);
+			});*/
+			
+			$('div').click(function(){
+				$('*').hide('slow');
+			});
+		});
+	</script>
+</html>

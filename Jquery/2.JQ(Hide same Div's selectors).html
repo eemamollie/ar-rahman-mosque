@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Examples of jQuery</title>	
+	<style type="text/css">
+		.hideMe
+		{
+			width:400px;
+			height:100px;			
+			left:0;
+			right:0;
+			position:relative;
+			border:1px solid #000;
+			background:teal;
+		}
+		.intro
+		{
+			width:400px;
+			height:100px;			
+			left:0;
+			right:0;
+			position:relative;
+			border:1px solid #000;
+			background:brown;
+		}
+		.hideMe p, .intro p{text-align:center; color:yellow; font-size:12px; font-weight:bold; padding-top:5px;}
+		
+	</style>
+</head>
+	<body>
+		<h1>Hide and seek</h1>
+		<div class="intro"><p>This is introduction division</p></div>	
+		<div class="hideMe"><p>Please keep any eye on me!</p><p>this is another paragraph</p></div>		
+		
+		<input type="button" id="btnClick" value="Hide">
+		
+		<div class="hideMe">
+			<p>Another div to hide</p>
+			<p>this is another paragraph</p>
+		</div>	
+		<div class="intro">
+			<p>This is another introduction division</p>
+		</div>	
+	</body>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/JavaScript">		
+		$(function(){
+			/*$('#btnClick').click(function(){
+				$('div.hideMe').hide('slow');
+			});
+			
+			$('#btnClick').click(function(){
+				//$('div:first').hide('slow');
+				$('div:last').hide('slow');
+			});
+			
+			$('#btnClick').click(function(){
+				$('div.hideMe:last').hide('slow');
+			});*/
+			
+			$('#btnClick').click(function(){
+				$('div.hideMe p:last, div.intro p:last').hide('slow');
+			});
+		});
+	</script>
+</html>

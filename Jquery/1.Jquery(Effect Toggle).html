@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="us-en">
+	<head>
+		<title>Jquery (Effect)</title>
+		<link type="text/css" href="" rel="StyleSheet">
+		
+	</head>
+	<body>
+		
+		<h1>Jquery()</h1>
+		<p>Porta odio ipsum interdum sed congue, massa nunc mauris. Neque at in dis malesuada. Ipsum tenetur sed integer 
+		   per ultricies nec, ac posuere quis quisque sit etiam erat, sed sem rutrum sagittis id litora in. Euismod ullamcorper 
+		   libero libero eu arcu commodo, ante nulla hendrerit ligula integer. Consequat sem, inceptos ultricies. Magna neque.</p>
+		<p>Nunc convallis ac exercitation erat, quis mauris congue libero rutrum magna gravida. Libero sed curabitur, placerat 
+		   wisi mauris id gravida iaculis magna, elementum gravida. Bibendum non pharetra nulla enim, eros etiam, non aliquam tempus 
+		   pellentesque rutrum ultrices rutrum. Velit sed libero in porttitor, rutrum et pretium phasellus tristique, metus phasellus 
+		   leo penatibus nulla. Ut fusce molestie egestas eu quam, in etiam integer, donec enim, wisi amet iaculis in, dictum nunc 
+		   rutrum consectetuer neque euismod.</p>
+		<button id="myButton">click to Toggle</button>
+	
+	</body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/JavaScript">	
+		$(document).ready(function(){
+			$("#myButton").click(function(){
+				$("p").slideToggle("slow");
+				$("h1").slideToggle("slow");
+			});
+		});
+	</script>
+</html>

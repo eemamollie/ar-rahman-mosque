@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Examples of jQuery</title>	
+	<style type="text/css">
+		.list
+		{
+			width:300px;
+			min-height:100px;
+			height:auto;
+			left:0;
+			right:0;
+			position:relative;
+			border:1px solid #000;
+			background:#e0e0e0;
+		}
+		
+		.hideMe p{text-align:center; color:yellow; font-size:12px; font-weight:bold;padding-top:5px;}
+		
+	</style>
+</head>
+	<body>
+		<div class="list">
+			<h1>This is heading</h1>
+			<p>This is a paragraph</p>
+			<p><a href="http://google.com">Google Search Engine</a></p>
+			<p><a href="http://bing.com" target="_blank" alt="bing">Bing Search Engine</a></p>
+			<p><a href="http://Yahoo.com" alt="yahoo" target="_blank">Yahoo Search Engine</a></p>
+			<p><a href="http://Yahoo.com" alt="yahoo">Yahoo Search Engine</a></p>
+			<input type="button" id="btnClick" value="Hide">
+		</div>		
+	</body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/JavaScript">		
+		$(function(){
+			$('#btnClick').click(function(){
+				//$("a[target='_blank']").hide();
+				//$('a[target!="_blank"]').hide();
+				//$('a[alt="yahoo"]').hide();
+				//$( "input[id][name$='man']" ).val( "only this one" );
+				$('a[alt="yahoo"][target="_blank"]').hide();
+			});
+		});
+	</script>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="us-en">
+<head>
+	<title>image slider</title>
+	<style type="text/css">
+		#slider{width:720px; height: 400px; overflow: hidden;}
+		#slider .slides{display: block; width: 6000px; height: 400px; margin: 0; padding: 0;}
+		#slider .slide{float: left; list-style-type: none; width: 720px; height: 400px;}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="header">
+			<h1 class="text-muted">JQuery basic Slider</h1>
+		</div>
+		<div id="slider">
+			<ul class="slides">
+				<li class="slide"><img src="image/autumn1.jpg"></li>
+				<li class="slide"><img src="image/autumn2.jpg"></li>
+				<li class="slide"><img src="image/bds3_1050.png"></li>
+				<li class="slide"><img src="image/bds5_1050.png"></li>
+				<li class="slide"><img src="image/bds8_1050.png"></li>
+				<li class="slide"><img src="image/autumn3.jpg"></li>
+				<li class="slide"><img src="image/bds7_1050.png"></li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript">
+	$(function(){
+		//configuration
+		var width = 720;
+		var animationSpeed = 1000;
+		var pause = 3000;
+		var currentSlide = 1;
+
+		//cache DOM
+		var $slider = $('#slider');
+		var $slideContainer = $slider.find('.slides');
+		var $slides = $slideContainer.find('.slide');
+
+		var interval;
+
+		function startSlider(){
+			interval = setInterval(function(){
+				$slideContainer.animate({'margin-left' : '-='+width}, animationSpeed, function(){
+					currentSlide++;
+					if(currentSlide === $slides.length){
+						currentSlide = 1;
+						$slideContainer.css('margin-left', 0);
+					}
+				});
+			}, pause);
+		}
+
+		function stopSlider(){
+			clearInterval(interval);
+		}
+
+		$slider.on('mouseenter', stopSlider).on('mouseleave', startSlider);
+
+		startSlider();
+	});
+</script>	
+
+</html>

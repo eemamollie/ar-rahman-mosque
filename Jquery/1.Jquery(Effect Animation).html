@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="us-en">
+	<head>
+		<title>Jquery (Effect)</title>
+		<link type="text/css" href="" rel="StyleSheet">
+		<style type="text/css">
+			#AnimateMe
+			{
+				width:350px; height:200px;
+				left:0; top:0;
+				position:relative;
+				border:1px solid red;
+				background:#abc;
+			}
+			#AnimateMe 
+			{
+				font:10px/12px kokila; color:red; text-align:center;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="AnimateMe">
+			<h1>Jquery()</h1>
+			<p>Porta odio ipsum interdum sed congue, massa nunc mauris inceptos ultricies. Magna neque.</p>
+			<p>Nunc  donec enim, wisi amet iaculis in, dictum nunc rutrum consectetuer neque euismod.</p>
+		</div>
+			<input type="button" id="btnanimate" value="Animate">
+			<input type="button" id="btnanimateback" value="AnimateBack">
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/JavaScript">	
+		$(function(){
+			$("#btnanimate").click(function(){
+				$("#AnimateMe").animate({
+					'left':'600px',
+					'top':'20px',
+					'border-width':'1px solid red'
+				},5000)
+			});
+			$("#btnanimateback").click(function(){
+				$("#AnimateMe").animate({
+					'left':'0',
+					'top':'0',
+					'border-width':'1px solid red'
+				},5000)
+			});
+		});
+	</script>
+</html>

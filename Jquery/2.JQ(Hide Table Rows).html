@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Examples of jQuery</title>	
+	<style type="text/css">
+		.canvas /*It is class of a div*/
+		{
+			width:500px;
+			min-height:100px;
+			height:auto;
+			left:0;
+			right:0;
+			position:relative;
+			border:2px solid blue;
+			background:#e0e0e0;
+		}
+		.canvas p{text-align:center; color:yellow; font-size:12px; font-weight:bold;padding-top:5px;}		
+		h3, input{margin-left:25px;}
+		input{margin-top:20px;margin-bottom:20px; font-size:12px; font-weight:bold; color:Navy; padding:5px 10px;}
+	</style>
+</head>
+	<body>
+		<div class="canvas">
+			<h3>Example with a Table</h3>
+			<table width="450" border="1" cellspacing="0" cellpadding="0" align="center">
+				<tr>
+					<td>Ser</td>
+					<td>First Name</td>
+					<td>Last Name</td>
+					<td>City</td>
+					<td>Zip</td>
+					<td>State</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Jasim</td>
+					<td>Ahmed</td>
+					<td>Parlin</td>
+					<td>08859</td>
+					<td>NJ</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Irani</td>
+					<td>Amin</td>
+					<td>Marlboro</td>
+					<td>07893</td>
+					<td>NJ</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Shahtab</td>
+					<td>Khondoker</td>
+					<td>Old Bridge</td>
+					<td>08623</td>
+					<td>NJ</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Ollie</td>
+					<td>Eemam</td>
+					<td>Sunny Side</td>
+					<td>11104</td>
+					<td>NY</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Gulshan</td>
+					<td>Jahan</td>
+					<td>Parlin</td>
+					<td>08859</td>
+					<td>NJ</td>
+				</tr>
+			</table>
+			<input type="button" id="btnClick" value="Format">
+		</div>		
+	</body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/JavaScript">		
+		$(function(){
+			/*$('#btnClick').click(function(){				
+				$('tr:even').hide();
+			});
+			
+			$('#btnClick').click(function(){				
+				$('tr:even').css("background","#e0e0e0");
+				$('tr:odd').css("background","#abc");
+			});	*/
+
+			$('#btnClick').click(function(){				
+				// $('tr:first-child').css("background","blue");
+				// $('tr:last-child').css("background","yellow");
+				$('tr:nth-child(odd)').css("background","#abc");
+				$('tr:nth-child(even)').css("background","#e0e0e0");
+			});			
+		});
+	</script>
+</html>

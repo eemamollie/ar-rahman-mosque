@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="us-en">
+<head>
+	<title>DOM Traversal</title>
+	<style type="text/css">
+		.special {color: blue;} hr{color:2px solid #000;}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</head>
+<body>
+	<h2>DOM Traversal with using LIST</h2>
+	<p>JQuery DOM Traversal Library</p>
+	<div>
+		<ul class="list">
+			<li>One</li>
+			<li class="special">Two</li>
+			<li>Three</li>
+			<li>
+				<ul class="sublist">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+				</ul>
+			</li>
+		</ul>
+	</div><hr>
+
+</body>
+	<script type="text/javascript">
+		$(function(){
+			//$('li').on('click', function(){
+				//$(this).next().hide();
+				//$(this).next().remove();
+				//$(this).siblings().remove();
+				//$(this).removeClass('.special');
+				//$(this).siblings().addClass('.special');
+				//$(this).closest('.list').addClass('.special');
+			//});
+
+			//$('.list').on('click', function(){
+				//$(this).find('li').filter(':last').addClass('.special');
+				//$(this).find('li').filter('.special').remove();
+			//});
+
+			//$('li').on('click', function(){
+				//$(this).remove();
+				//if( $(this).is('.special')){alert("It's special")}
+				//else{ alert("It's not Special");}
+			//});
+
+			//$('.sublist li').on('click', function(){
+				//Other stuff to all li
+				//if( $(this).parent().is('.sublist')){ $(this).hide();}
+			//});
+
+			$('li').on('click', function(){
+				console.log('You clicked li');
+
+				if( $(this).parent().is('.sublist')){
+					$(this).remove();
+				}
+			});
+		});
+	</script>
+</html>
+
+
+
+<!--
+
+//To console
+//$('li').first().show()
+//$('li').eq(0)
+//$('li').eq(3)
+//$('ul:first').children()
+//$('li:first').siblings()
+//$('li').eq(4).parent().parent()
+//$('li').eq(4).parent().parent().prev()
+//$('li').first().next()
+//$('')                
+
+-->
+
+
+
+
+
+
+
+
+

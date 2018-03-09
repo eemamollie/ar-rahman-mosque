@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Examples of jQuery</title>	
+	<style type="text/css">
+		.canvas
+		{
+			width:600px;
+			min-height:100px;
+			height:auto;
+			left:0;
+			right:0;
+			position:relative;
+			border:2px dotted blue;
+			background:#e0e0e0;
+			overflow: auto;
+		}
+		.canvas p{text-align:center; color:#000; font-size:12px; font-weight:bold;padding-top:5px;}		
+		h3, input{margin-left:15px;}
+		input{margin-top:20px;margin-bottom:20px; font-size:12px; font-weight:bold; color:Navy; padding:5px 10px;}
+		
+		#imgdiv img{box-shadow:2px 2px 2px #898989;}
+		.printHere{padding: 10px; text-align: center; font-weight: bold; color: navy;}
+	</style>
+</head>
+	<body>
+		<div class="canvas">
+			<h3>Example of Get & Set</h3>
+			<ol>
+				<li>text</li>
+				<li>html</li>
+				<li>innerHtml</li>
+				<li>val</li>				
+			</ol>
+			<input type="text" id="name" value="GulShan Zahan">
+			<input type="button" id="btnClick" value="btnClick">
+			
+			<div id="myname" width="450px" height="300px">
+				<div id="imgdiv" width="250px" height="200px">
+					<p>image paragraph 1</p>
+					<img src="C:\Users\mkhossain\Desktop\Master\images/night-photography-2.png" title="NightView" width="250px" height="200px"/>
+					<p>image paragraph 2</p>
+					<p>image paragraph 3</p>
+				</div>	
+				<p>Gulshan Jahan</p>
+				<p>Irani Apa </p>
+				<p>Jasim Ahmed</p>
+				<p> Ollie Eemam</p>
+			</div>
+			
+			<input type="text" id="anothername"/><br/><br/>
+			<div class="printHere"></div>
+		</div>		
+	</body>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<script type="text/JavaScript">		
+		$(function(){						
+			$('#btnClick').click(function(){
+				var txtName;
+
+				// txtName=$('#name').val();
+				// $("#anothername").val(txtName); 
+
+				// txtName=$('#myname').text();
+				// alert(txtName);
+
+
+				//txtName=$('#myname p:last').html();
+				//txtName=$('#myname p:last').text();
+
+				//$("div.printHere").html(txtName).css({'border':'1px solid red'});
+
+				//txtName=$('#myname p:nth-child(odd)').text();
+				//$("div.printHere").html(txtName).css({'border':'1px solid red'});
+
+				//txtName=$('#myname p:nth-child(even)').text();
+				//$("div.printHere").html(txtName).css({'border':'1px solid red'});
+
+				// txtName=$('#imgdiv img').css('width','590px');
+				// $("div.printHere").html(txtName).css({'border':'1px solid red'});
+
+				// txtName=$('#imgdiv p:nth-child(odd)').css('color','red');
+				// $("div.printHere").html(txtName).css({'border':'1px solid red'});
+
+				// txtName=$('#imgdiv p:nth-child(odd)').css('width','125px');
+				// $("div.printHere").html(txtName).css({'border':'1px solid red'});
+
+
+				// $('#imgdiv p:nth-child(odd)').css({'background':'#cfc','width':'125px','color':'red'});
+				// $("div.printHere").html(txtName).css({'border':'1px solid red'});
+	
+				
+				// txtName=$('#name').val();
+				// $("div.printHere").html(txtName).css({'border':'1px solid red'});
+
+				// txtName=$('#anothername').val();
+				// alert("The content is: " + txtName);
+
+			});
+
+
+			$('#btnClick').mouseover(function(){
+				$('#imgdiv img').css('width','400px');
+			});
+			$('#btnClick').mouseout(function(){
+				$('#imgdiv img').css('width','250px');
+			});
+		});
+	</script>
+</html>

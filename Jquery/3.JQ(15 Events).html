@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Examples of jQuery</title>	
+	<style type="text/css">
+		body{background:#e0e0e0; margin:0 auto;}
+		
+		#canvas /*It is class of a div*/
+		{
+			width:500px;
+			min-height:100px;
+			height:auto;
+			left:0;
+			right:0;
+			position:relative;
+			outline:1px solid blue;
+			background:#d7d7d7;
+			margin:0 auto;
+		}
+		#canvas p{text-align:center; color:yellow; font-size:12px; font-weight:bold;padding-top:5px;}		
+		h3, input{margin-left:25px;}
+		input{margin-top:20px;margin-bottom:20px; font-size:12px; font-weight:bold; color:Navy; padding:5px 10px;}
+	</style>
+</head>
+	<body>
+		<div id="canvas">
+			<h3>Example of Events</h3>
+			<ol>
+				<li>click</li>
+				<li>dblclick</li>
+				<li>mouseenter</li>
+				<li>mouseleave</li>
+				<li>keypress</li>
+				<li>keydown</li>
+				<li>keyup</li>
+				<li>submit</li>
+				<li>change</li>
+				<li>focus</li>
+				<li>blur</li>
+				<li>load</li>
+				<li>resize</li>
+				<li>scroll</li>
+				<li>unload</li>
+			</ol>			
+			
+			<input type="text" id="jasim" value="Jasim Ahmed"/>   
+			<input type="text" name="own" id="address"/>
+			<input type="button" id="btnClick" value="btnClick"/>
+		</div>		
+	</body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/JavaScript">		
+		$(function(){
+			// $('#btnClick').click(function(){
+			// 	alert("It is single click!");
+			// });
+			
+			// $('#btnClick').dblclick(function(){
+			// 	alert("It is double click!");
+			// });
+			
+			// $('#btnClick').mouseenter(function(){
+			// 	$('#canvas ol li').css({'background':'#abc','width':'100px','display':'block','margin-bottom':'4px','color':'#fff','border-radius':'3px','padding-left':'3px'});	
+			// });
+			
+			$('#btnClick').click(function(){
+				//$('input').fadeOut(50);
+				$("input[name][id$='address'], input[id$='jasim']").hide(100);		
+			});
+			
+			// $('#address').keypress(function(){
+			// 	alert("Key-Press event fired!");
+			// });			
+			
+			// $('#address').keydown(function(){
+			// 	alert("Key-Down event fired!");
+			// });		
+			
+			// $('#address').keyup(function(){
+			// 	alert("Key-up event fired!");
+			// });			
+			
+			// $('#address').focus(function(){ 
+			// 	alert("Focus event fired!");
+			// });			
+		
+			// $('#address').blur(function(){
+			// 	alert("blur event fired!");
+			// });
+			
+			// $('#address').focus(function(){
+			// 	$(this).css("background","#abc");
+			// });
+			
+			// $('#address').blur(function(){
+			// 	$(this).css("background","#abc");
+			// });		
+		});
+	</script>
+</html>

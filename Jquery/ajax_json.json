@@ -1,0 +1,20 @@
+var thePets = 
+[
+	{
+		"name":"Meowsalot",
+		"species":"cat",
+		"favfood":"tuna"
+	},
+	
+	{
+		"name":"Barky",
+		"species":"dog",
+		"favfood":"carrot"
+	},
+
+	{
+		"name":"Alicia",
+		"species":"parrot",
+		"favfood":"coconut"
+	}
+]

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Examples of jQuery</title>	
+	<style type="text/css">
+		.list
+		{
+			width:300px;
+			min-height:100px;
+			height:auto;
+			left:0;
+			right:0;
+			position:relative;
+			border:1px solid #000;
+			background:#e0e0e0;
+		}
+		
+		.hideMe p{text-align:center; color:yellow; font-size:12px; font-weight:bold;padding-top:5px;}
+		
+	</style>
+</head>
+	<body>
+		<h1>Un-Ordered List</h1>
+		<div class="list">
+			<h2>List of Beverage</h2>
+			<ol>
+				<li>Coffee</li>
+				<li>Tea</li>
+				<li>Milk</li>
+			</ol>
+			
+			<h2>List of Bagel</h2>
+			<ul>
+				<li>Plain</li>
+				<li>Everything</li>
+				<li>Whole Wheat</li>
+			</ul>
+			<h2>List of Ice-Cream</h2>
+			<ul>
+				<li>Mango</li>
+				<li>Chocolate</li>
+				<li>Vanilla</li>
+			</ul>
+		</div>
+		<input type="button" id="btnClick" value="Click to Hide">
+		
+	</body>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script type="text/JavaScript">		
+		$(function(){			
+			/*$('#btnClick').click(function(){
+				$('ul li:first-child').hide(2500);
+			});
+
+			$('#btnClick').click(function(){
+				$('ul li:nth-child(odd)').hide(2500);
+			});			
+			
+			$('#btnClick').click(function(){
+				$('ul li:nth-child(even)').hide(3000);
+			});	*/	
+
+			$('#btnClick').click(function(){
+				/*$('ul li:nth-child(1)').hide('slow');
+				$('ul li:nth-child(2n)').hide('slow');*/
+				$('ul li:nth-child(3n)').hide('slow');
+			});			
+		});
+	</script>
+</html>
